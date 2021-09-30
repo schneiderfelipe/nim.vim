@@ -43,44 +43,38 @@ like this:
 
     cd ~/.vim/bundle
     git clone git://github.com/zah/nim.vim.git
-    
-You may also want to install synastic by calling 
+
+You may also want to install synastic by calling
 
     git clone https://github.com/scrooloose/syntastic.git
 
 ## Vundle
-  
-Vundle is a more automatic way to install vim plugins that works by cloning 
-the git reposotory.
-  
+
+Vundle is a more automatic way to install vim plugins that works by cloning
+the git repository.
+
 ### Step 1: Install Vundle
-  
+
 Add the vundle script to your vim:
-  
+
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    
+
 Modify your ~/.vimrc to get vundle running, lightly adapted from [Vundle's readme](https://github.com/gmarik/Vundle.vim/blob/master/README.md)
 
     set nocompatible              " be iMproved, required
     filetype off                  " required
-    
+
     " set the runtime path to include Vundle and initialize
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
     " alternatively, pass a path where Vundle should install bundles
     "let path = '~/some/path/here'
     "call vundle#rc(path)
-    
+
     " let Vundle manage Vundle, required
     Bundle 'gmarik/vundle'
-    
-    filetype plugin indent on     " required
-    
-### Step 2: Install nim.vim
 
-On the line after `Bundle 'gmarik/vundle'`, add `Bundle 'zah/nim.vim'`. You may also want
-to add `Bundle 'scrooloose/syntastic'`. Save `~/.vimrc` and restart vim. Execute `:BundleInstall`
-and wait for nim.vim to be installed.
+    filetype plugin indent on     " required
 
 ## vim-plug
 
@@ -115,7 +109,7 @@ Next you *need to add this* to your `~/.vimrc`:
         exe "norm! \<C-]>"
       endif
     endf
-    
+
     " Jump to tag
     nn <M-g> :call JumpToDef()<cr>
     ino <M-g> <esc>:call JumpToDef()<cr>i
@@ -125,8 +119,8 @@ compiler with the appropriate idetools command. Pressing meta+g will then jump
 to the definition of the word your cursor is on. This uses the nim compiler
 instead of ctags, so it works on any nimrod file which is compilable without
 requiring you to maintain a database file.
-  
-# Other recomended Vim plugins
+
+# Other recommended Vim plugins
 
 * https://github.com/scrooloose/syntastic (copied bits from its readme)
 * https://github.com/Shougo/neocomplcache
